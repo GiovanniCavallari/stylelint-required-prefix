@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stylelint required prefix plugin should pass for valid css file 1`] = `[]`;
+
+exports[`stylelint required prefix plugin should throw error for invalid css file 1`] = `
+[
+  "Expected prefix "gc-" on selector ".selector" (@gcavallari/stylelint-required-prefix)",
+  "Expected prefix "gc-" on selector ".selector .primary:hover" (@gcavallari/stylelint-required-prefix)",
+  "Expected prefix "gc-" on selector ".selector .secondary:hover" (@gcavallari/stylelint-required-prefix)",
+]
+`;
