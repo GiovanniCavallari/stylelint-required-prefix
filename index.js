@@ -2,7 +2,7 @@ const stylelint = require('stylelint');
 
 const { report, ruleMessages, validateOptions } = stylelint.utils;
 
-const ruleName = 'woocommerce-mercadopado/required-prefix';
+const ruleName = '@gcavallari/stylelint-required-prefix';
 const messages = ruleMessages(ruleName, {
   expected: (prefix, selector) => `Expected prefix "${prefix}" on selector "${selector}"`,
 });
@@ -22,7 +22,6 @@ const ruleFunction = (primaryOption, secondaryOptionObject) => {
 
     const autofixOption = secondaryOptionObject?.autofix;
     if (typeof autofixOption !== 'boolean') {
-      console.log(autofixOption);
       return;
     }
 

@@ -22,24 +22,25 @@
     "custom properties"
   ],
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "test": "NODE_ENV=test jest --config jest.config.js --coverage"
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
+    "lint:css": "stylelint 'tests/fixtures/*.css'",
+    "lint:css:fix": "stylelint --fix 'tests/fixtures/*.css'",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint --fix .",
+    "test": "NODE_ENV=test jest --config jest.config.js --coverage --updateSnapshot"
   },
   "peerDependencies": {
-    "stylelint": "^14.3.0"
+    "stylelint": "^14.16.1"
   },
   "devDependencies": {
-    "stylelint": "^14.16.1",
-    "stylelint-config-standard": "^29.0.0"
-  },
-  "dependencies": {
-    "D": "^1.0.0",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-jest": "^27.2.1",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^29.4.1",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "stylelint": "^14.16.1",
+    "stylelint-config-standard": "^29.0.0"
   }
 }
