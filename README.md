@@ -42,7 +42,7 @@ npm install @giovannicavallari/stylelint-required-prefix
 
 ## Usage
 
-Add it to your stylelint config `plugins` array, then add `"@giovannicavallari/stylelint-required-prefix"` to your rules.
+Add it to your stylelint config `plugins` array, then add `"giovannicavallari/stylelint-required-prefix"` to your rules.
 
 ### Options
 
