@@ -10,8 +10,8 @@ exports[`Stylelint Required Prefix Plugin Tests should return if prefix option i
 
 exports[`Stylelint Required Prefix Plugin Tests should throw error for invalid css file 1`] = `
 [
-  "Expected prefix "gc-" on selector ".selector" (@giovannicavallari/stylelint-required-prefix)",
-  "Expected prefix "gc-" on selector ".selector .primary:hover" (@giovannicavallari/stylelint-required-prefix)",
-  "Expected prefix "gc-" on selector ".selector .secondary:hover" (@giovannicavallari/stylelint-required-prefix)",
+  "Expected prefix "gc-" on selector ".selector" (giovannicavallari/stylelint-required-prefix)",
+  "Expected prefix "gc-" on selector ".selector .primary:hover" (giovannicavallari/stylelint-required-prefix)",
+  "Expected prefix "gc-" on selector ".selector .secondary:hover" (giovannicavallari/stylelint-required-prefix)",
 ]
 `;

@@ -4,7 +4,7 @@ module.exports = {
   extends: [require.resolve('stylelint-config-standard')],
   plugins: [path.resolve(__dirname, '..', '..', 'index.js')],
   rules: {
-    '@giovannicavallari/stylelint-required-prefix': [
+    'giovannicavallari/stylelint-required-prefix': [
       true,
       {
         prefix: 123,

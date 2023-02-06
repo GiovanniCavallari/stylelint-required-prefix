@@ -2,7 +2,7 @@ const stylelint = require('stylelint');
 
 const { report, ruleMessages, validateOptions } = stylelint.utils;
 
-const ruleName = '@giovannicavallari/stylelint-required-prefix';
+const ruleName = 'giovannicavallari/stylelint-required-prefix';
 const messages = ruleMessages(ruleName, {
   expected: (prefix, selector) => `Expected prefix "${prefix}" on selector "${selector}"`,
 });
