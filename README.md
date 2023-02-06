@@ -4,7 +4,7 @@ A [stylelint](https://stylelint.io/) custom rule to check if the given prefix in
 
 ## Motivation
 
-This plugin will be useful if we want CSS classes to have a mandatory prefix.
+This plugin will be useful if we want CSS classes to have a required prefix.
 
 For example, if you want to avoid conflicts with classes that already exist in a theme you are using.
 
@@ -52,16 +52,16 @@ Add it to your stylelint config `plugins` array, then add `"@giovannicavallari/s
 
 ### Example
 
-```json
-// .stylelintrc.json
+```js
+// .stylelintrc
 {
-  //...
+  // ...
   "plugins": [
     // ...
     "@giovannicavallari/stylelint-required-prefix"
   ],
   rules: {
-    //...
+    // ...
     "giovannicavallari/stylelint-required-prefix": [
       true,
       {
