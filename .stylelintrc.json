@@ -1,14 +1,4 @@
 {
   "extends": ["stylelint-config-standard"],
-  "plugins": ["./index.js"],
-  "rules": {
-    "@giovannicavallari/stylelint-required-prefix": [
-      true,
-      {
-        "prefix": "gc-",
-        "autofix": true,
-        "ignore": ["primary", "secondary"]
-      }
-    ]
-  }
+  "rules": {}
 }
