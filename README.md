@@ -16,9 +16,6 @@ CSS before
 .selector {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 ```
 
@@ -28,9 +25,6 @@ CSS after
 .required-prefix-selector {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 ```
 
