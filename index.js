@@ -7,7 +7,7 @@ const messages = ruleMessages(ruleName, {
   expected: (prefix, selector) => `Expected prefix "${prefix}" on selector "${selector}"`,
 });
 
-const ruleFunction = (primaryOption, secondaryOptionObject) => {
+const ruleFunction = (primaryOption, secondaryOptionObject, context) => {
   return function lint(postcssRoot, postcssResult) {
     const validOptions = validateOptions(postcssResult, ruleName, {});
 
@@ -15,13 +15,12 @@ const ruleFunction = (primaryOption, secondaryOptionObject) => {
       return;
     }
 
-    const prefixOption = secondaryOptionObject?.prefix;
-    if (typeof prefixOption !== 'string') {
+    if (!primaryOption) {
       return;
     }
 
-    const autofixOption = secondaryOptionObject?.autofix;
-    if (typeof autofixOption !== 'boolean') {
+    const prefixOption = secondaryOptionObject?.prefix;
+    if (typeof prefixOption !== 'string') {
       return;
     }
 
@@ -50,7 +49,7 @@ const ruleFunction = (primaryOption, secondaryOptionObject) => {
       });
 
       if (error) {
-        if (autofixOption) {
+        if (context.fix) {
           rule.selector = newClassSelectorName;
         } else {
           report({

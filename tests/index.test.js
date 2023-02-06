@@ -32,6 +32,17 @@ describe('Stylelint Required Prefix Plugin Tests', () => {
     expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
   });
 
+  it('should return if enabled option is false', async () => {
+    const { results } = await stylelint.lint({
+      files: [resolveFile('fixtures', 'valid.css')],
+      configFile: resolveFile('configs', 'option-enabled-false.js'),
+    });
+
+    expect(results).toHaveLength(1);
+    expect(results[0].warnings).toHaveLength(0);
+    expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
+  });
+
   it('should return if prefix option is not a string', async () => {
     const { results } = await stylelint.lint({
       files: [resolveFile('fixtures', 'valid.css')],
@@ -43,32 +54,10 @@ describe('Stylelint Required Prefix Plugin Tests', () => {
     expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
   });
 
-  it('should return if autofix option is not a boolean', async () => {
-    const { results } = await stylelint.lint({
-      files: [resolveFile('fixtures', 'valid.css')],
-      configFile: resolveFile('configs', 'option-autofix-string.js'),
-    });
-
-    expect(results).toHaveLength(1);
-    expect(results[0].warnings).toHaveLength(0);
-    expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
-  });
-
   it('should return if ignore option is not a array', async () => {
     const { results } = await stylelint.lint({
       files: [resolveFile('fixtures', 'valid.css')],
       configFile: resolveFile('configs', 'option-ignore-string.js'),
-    });
-
-    expect(results).toHaveLength(1);
-    expect(results[0].warnings).toHaveLength(0);
-    expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
-  });
-
-  it('should receive autofix option true', async () => {
-    const { results } = await stylelint.lint({
-      files: [resolveFile('fixtures', 'invalid.css')],
-      configFile: resolveFile('configs', 'option-autofix-true.js'),
     });
 
     expect(results).toHaveLength(1);

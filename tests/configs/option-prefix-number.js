@@ -8,7 +8,6 @@ module.exports = {
       true,
       {
         prefix: 123,
-        autofix: false,
         ignore: ['primary', 'secondary'],
       },
     ],

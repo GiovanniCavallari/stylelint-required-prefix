@@ -5,11 +5,10 @@ module.exports = {
   plugins: [path.resolve(__dirname, '..', '..', 'index.js')],
   rules: {
     '@giovannicavallari/stylelint-required-prefix': [
-      true,
+      false,
       {
         prefix: 'gc-',
-        autofix: 'true',
-        ignore: ['primary', 'secondary'],
+        ignore: 'primary',
       },
     ],
   },

@@ -2,9 +2,7 @@
 
 exports[`Stylelint Required Prefix Plugin Tests should pass for valid css file 1`] = `[]`;
 
-exports[`Stylelint Required Prefix Plugin Tests should receive autofix option true 1`] = `[]`;
-
-exports[`Stylelint Required Prefix Plugin Tests should return if autofix option is not a boolean 1`] = `[]`;
+exports[`Stylelint Required Prefix Plugin Tests should return if enabled option is false 1`] = `[]`;
 
 exports[`Stylelint Required Prefix Plugin Tests should return if ignore option is not a array 1`] = `[]`;
 

@@ -8,7 +8,6 @@ module.exports = {
       true,
       {
         prefix: 'gc-',
-        autofix: false,
         ignore: 'primary',
       },
     ],
