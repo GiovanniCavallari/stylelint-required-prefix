@@ -1,11 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`stylelint required prefix plugin should pass for valid css file 1`] = `[]`;
+exports[`Stylelint Required Prefix Plugin Tests should pass for valid css file 1`] = `[]`;
 
-exports[`stylelint required prefix plugin should throw error for invalid css file 1`] = `
+exports[`Stylelint Required Prefix Plugin Tests should receive autofix option true 1`] = `[]`;
+
+exports[`Stylelint Required Prefix Plugin Tests should return if autofix option is not a boolean 1`] = `[]`;
+
+exports[`Stylelint Required Prefix Plugin Tests should return if ignore option is not a array 1`] = `[]`;
+
+exports[`Stylelint Required Prefix Plugin Tests should return if prefix option is not a string 1`] = `[]`;
+
+exports[`Stylelint Required Prefix Plugin Tests should throw error for invalid css file 1`] = `
 [
-  "Expected prefix "gc-" on selector ".selector" (@gcavallari/stylelint-required-prefix)",
-  "Expected prefix "gc-" on selector ".selector .primary:hover" (@gcavallari/stylelint-required-prefix)",
-  "Expected prefix "gc-" on selector ".selector .secondary:hover" (@gcavallari/stylelint-required-prefix)",
+  "Expected prefix "gc-" on selector ".selector" (@giovannicavallari/stylelint-required-prefix)",
+  "Expected prefix "gc-" on selector ".selector .primary:hover" (@giovannicavallari/stylelint-required-prefix)",
+  "Expected prefix "gc-" on selector ".selector .secondary:hover" (@giovannicavallari/stylelint-required-prefix)",
 ]
 `;

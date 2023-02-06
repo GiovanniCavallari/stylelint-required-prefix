@@ -1,5 +1,5 @@
 {
-  "name": "@gcavallari/stylelint-required-prefix",
+  "name": "@giovannicavallari/stylelint-required-prefix",
   "version": "1.0.0",
   "description": "A stylelint custom rule to check if the given prefix in css class naming exists.",
   "main": "index.js",

@@ -9,30 +9,70 @@ function extractErrorMessage(warnings) {
   return warnings.map(({ text }) => text);
 }
 
-describe('stylelint required prefix plugin', () => {
-  it('should pass for valid css file', () => {
-    return stylelint
-      .lint({
-        files: [resolveFile('fixtures', 'valid.css')],
-        configFile: resolveFile('configs', 'stylelint.js'),
-      })
-      .then(({ results }) => {
-        expect(results).toHaveLength(1);
-        expect(results[0].warnings).toHaveLength(0);
-        expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
-      });
+describe('Stylelint Required Prefix Plugin Tests', () => {
+  it('should pass for valid css file', async () => {
+    const { results } = await stylelint.lint({
+      files: [resolveFile('fixtures', 'valid.css')],
+      configFile: resolveFile('configs', 'default.js'),
+    });
+
+    expect(results).toHaveLength(1);
+    expect(results[0].warnings).toHaveLength(0);
+    expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
   });
 
-  it('should throw error for invalid css file', () => {
-    return stylelint
-      .lint({
-        files: [resolveFile('fixtures', 'invalid.css')],
-        configFile: resolveFile('configs', 'stylelint.js'),
-      })
-      .then(({ results }) => {
-        expect(results).toHaveLength(1);
-        expect(results[0].warnings).toHaveLength(3);
-        expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
-      });
+  it('should throw error for invalid css file', async () => {
+    const { results } = await stylelint.lint({
+      files: [resolveFile('fixtures', 'invalid.css')],
+      configFile: resolveFile('configs', 'default.js'),
+    });
+
+    expect(results).toHaveLength(1);
+    expect(results[0].warnings).toHaveLength(3);
+    expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
+  });
+
+  it('should return if prefix option is not a string', async () => {
+    const { results } = await stylelint.lint({
+      files: [resolveFile('fixtures', 'valid.css')],
+      configFile: resolveFile('configs', 'option-prefix-number.js'),
+    });
+
+    expect(results).toHaveLength(1);
+    expect(results[0].warnings).toHaveLength(0);
+    expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
+  });
+
+  it('should return if autofix option is not a boolean', async () => {
+    const { results } = await stylelint.lint({
+      files: [resolveFile('fixtures', 'valid.css')],
+      configFile: resolveFile('configs', 'option-autofix-string.js'),
+    });
+
+    expect(results).toHaveLength(1);
+    expect(results[0].warnings).toHaveLength(0);
+    expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
+  });
+
+  it('should return if ignore option is not a array', async () => {
+    const { results } = await stylelint.lint({
+      files: [resolveFile('fixtures', 'valid.css')],
+      configFile: resolveFile('configs', 'option-ignore-string.js'),
+    });
+
+    expect(results).toHaveLength(1);
+    expect(results[0].warnings).toHaveLength(0);
+    expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
+  });
+
+  it('should receive autofix option true', async () => {
+    const { results } = await stylelint.lint({
+      files: [resolveFile('fixtures', 'invalid.css')],
+      configFile: resolveFile('configs', 'option-autofix-true.js'),
+    });
+
+    expect(results).toHaveLength(1);
+    expect(results[0].warnings).toHaveLength(0);
+    expect(extractErrorMessage(results[0].warnings)).toMatchSnapshot();
   });
 });
