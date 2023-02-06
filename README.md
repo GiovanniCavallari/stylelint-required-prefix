@@ -6,7 +6,7 @@ A [stylelint](https://stylelint.io/) custom rule to check if the given prefix in
 
 This plugin will be useful if we want CSS classes to have a required prefix.
 
-For example, if you want to avoid conflicts with classes that already exist in a theme you are using.
+For example, if you want to avoid conflicts with classes name that already exist in a theme you are using.
 
 ### Example:
 
